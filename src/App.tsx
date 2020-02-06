@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import ContentsPanel from './components/templates/ContentsPanel';
+import Header from './components/templates/Header';
+import { ThemeProvider } from '@material-ui/core';
+
+import { defaultTheme } from './themes/defaultTheme';
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <div className="App">
+        <Header />
+        <BrowserRouter>
+          <Route exact path="/">
+            <ContentsPanel cardGrid={{ cards: [] }} />
+          </Route>
+          <Route path="/work">
+            <ContentsPanel cardGrid={{ cards: [] }} />
+          </Route>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 };
 

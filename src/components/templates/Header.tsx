@@ -1,10 +1,37 @@
 import React from 'react';
-import { AppBar } from '@material-ui/core';
+import { AppBar, Box, Grid, makeStyles, Theme } from '@material-ui/core';
 
 type Props = {};
 
+const useStyles = makeStyles((theme: Theme) => ({
+  appBar: {
+    color: theme.palette.common.primary
+  }
+}));
+
 const Header: React.FC<Props> = (props: Props) => {
-  return <AppBar />;
+  const classes = useStyles();
+
+  return (
+    <>
+      <AppBar className={classes.appBar}>
+        <Grid
+          container
+          justify={'space-between'}
+          alignContent={'center'}
+          style={{ height: '4rem' }}
+        >
+          <Grid item xs={2}>
+            Keita Makino
+          </Grid>
+          <Grid container item xs={2} justify={'space-around'}>
+            <Grid item>Linkedin</Grid>
+            <Grid item>Github</Grid>
+          </Grid>
+        </Grid>
+      </AppBar>
+    </>
+  );
 };
 
 export default Header;
