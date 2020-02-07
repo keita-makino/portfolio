@@ -1,13 +1,8 @@
 import React from 'react';
 import { AppBar, Box, Grid, makeStyles, Theme } from '@material-ui/core';
+import useStyles from '../../themes/theme';
 
 type Props = {};
-
-const useStyles = makeStyles((theme: Theme) => ({
-  appBar: {
-    color: theme.palette.common.primary
-  }
-}));
 
 const Header: React.FC<Props> = (props: Props) => {
   const classes = useStyles();

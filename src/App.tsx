@@ -4,24 +4,30 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import ContentsPanel from './components/templates/ContentsPanel';
 import Header from './components/templates/Header';
-import { ThemeProvider } from '@material-ui/core';
+import { ThemeProvider, Grid } from '@material-ui/core';
 
 import { defaultTheme } from './themes/defaultTheme';
+import Root from './components/pages/Root';
+import useStyles from './themes/theme';
 
 const App = () => {
+  const classes = useStyles();
+
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div className="App">
+      <Grid container className={classes.root}>
         <Header />
-        <BrowserRouter>
-          <Route exact path="/">
-            <ContentsPanel cardGrid={{ cards: [] }} />
-          </Route>
-          <Route path="/work">
-            <ContentsPanel cardGrid={{ cards: [] }} />
-          </Route>
-        </BrowserRouter>
-      </div>
+        <Grid container style={{ marginTop: '4rem' }}>
+          <BrowserRouter>
+            <Route path="/">
+              <Root />
+            </Route>
+            <Route path="/work">
+              <Root />
+            </Route>
+          </BrowserRouter>
+        </Grid>
+      </Grid>
     </ThemeProvider>
   );
 };
