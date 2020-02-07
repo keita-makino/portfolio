@@ -8,7 +8,7 @@ const CardGrid: React.FC<Props> = (props: Props) => {
   return (
     <Grid container>
       {props.cards.map(item => (
-        <Card />
+        <Card {...item} />
       ))}
     </Grid>
   );
