@@ -8,16 +8,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   appBar: {
     color: theme.palette.common.primary
   },
+  cardGrid: {},
   card: {
     width: 345,
     height: 240,
-    transition: '1s',
-    position: 'fixed'
+    transition: '0.7s',
+    position: 'relative'
   },
-  bigCard: {
+  cardFocused: {
     width: 1200,
     height: 960,
-    transition: '1s',
     position: 'absolute'
   }
 }));

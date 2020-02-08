@@ -23,7 +23,7 @@ const Card: React.FC<Props> = (props: Props) => {
   const historyState = useLocation().state as HistoryState;
   const history = useHistory();
 
-  const focus = historyState.focus;
+  const focus = historyState !== undefined ? historyState.focus : undefined;
   console.log(focus);
 
   const onClick = (event: any) => {
@@ -41,7 +41,9 @@ const Card: React.FC<Props> = (props: Props) => {
   return (
     <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }}>
       <CardMui
-        className={focus === props.title ? classes.bigCard : classes.card}
+        className={`${classes.card} ${
+          focus === props.title ? classes.cardFocused : null
+        } `}
       >
         <CardActionArea onClick={onClick} value={props.title}>
           <CardContent>
