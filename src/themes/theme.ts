@@ -5,19 +5,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     minHeight: '100vh',
     backgroundColor: theme.palette.background.default
   },
+  main: { marginTop: '4rem' },
   appBar: {
     color: theme.palette.common.primary
   },
-  cardGrid: {},
   card: {
-    width: 345,
-    height: 240,
-    transition: '0.7s',
-    position: 'relative'
-  },
-  cardFocused: {
-    width: 1200,
-    height: 960,
+    width: '100%',
+    height: '100%',
     position: 'absolute'
   }
 }));

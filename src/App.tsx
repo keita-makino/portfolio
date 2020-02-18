@@ -5,11 +5,11 @@ import ApolloClient, { InMemoryCache, gql } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import data from './data/initialState';
 
-import Header from './components/templates/Header';
 import { ThemeProvider, Grid } from '@material-ui/core';
 
 import { defaultTheme } from './themes/defaultTheme';
-import Root from './components/pages/Root';
+import Index from './pages/Index';
+import Header from './pages/Header';
 import useStyles from './themes/theme';
 
 const cache = new InMemoryCache();
@@ -32,13 +32,17 @@ const App = () => {
       <ThemeProvider theme={defaultTheme}>
         <Grid container className={classes.root}>
           <Header />
-          <Grid container style={{ marginTop: '4rem' }}>
+          <Grid
+            container
+            xs={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={classes.main}
+          >
             <BrowserRouter>
               <Route path="/">
-                <Root />
-              </Route>
-              <Route path="/work">
-                <Root />
+                <Index />
               </Route>
             </BrowserRouter>
           </Grid>
