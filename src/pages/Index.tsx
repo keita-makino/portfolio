@@ -3,31 +3,38 @@ import IndexTemplate from '../components/templates/Index';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import useStyles from '../themes/theme';
+import { Grid } from '@material-ui/core';
 
 type Props = {};
 
 const query = gql`
   {
+    profile @client {
+      title
+      positions
+      links {
+        text
+        link
+        icon
+      }
+    }
     academic @client {
       cards {
         title
         subtitle
         descriptions
-        __typename
       }
     }
     school @client {
       cards {
         title
         descriptions
-        __typename
       }
     }
     personal @client {
       cards {
         title
         descriptions
-        __typename
       }
     }
   }
@@ -36,7 +43,11 @@ const query = gql`
 const Index: React.FC<Props> = (props: Props) => {
   const { data } = useQuery(query);
 
-  return <IndexTemplate {...data} />;
+  return (
+    <Grid item container xs={12} sm={12} md={12} lg={12} xl={12}>
+      <IndexTemplate {...data} />
+    </Grid>
+  );
 };
 
 export default Index;

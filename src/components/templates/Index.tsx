@@ -2,9 +2,10 @@ import React, { useEffect, HTMLAttributes } from 'react';
 import CardGrid, { Props as CardGridProps } from '../organisms/CardGrid';
 import { Paper, Typography, Grid } from '@material-ui/core';
 
-import Profile from '../organisms/Profile';
+import Profile, { Props as ProfileProps } from '../organisms/Profile';
 
 type Props = {
+  profile: ProfileProps;
   academic: CardGridProps;
   school: CardGridProps;
   personal: CardGridProps;
@@ -13,7 +14,7 @@ type Props = {
 const Index: React.FC<Props> = (props: Props) => {
   return (
     <>
-      <Profile />
+      <Profile {...props.profile} />
       <Grid
         container
         xs={12}

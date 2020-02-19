@@ -68,10 +68,11 @@ const Card: React.FC<Props> = (props: Props) => {
         }}
       ></div>
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ display: 'none', opacity: 0 }}
         animate={{
+          display: 'block',
           opacity: focus === props.title ? 0.2 : 0,
-          zIndex: focus === props.title ? 100 : 0
+          zIndex: focus === props.title ? 100 : -1
         }}
         style={{
           backgroundColor: '#000000',

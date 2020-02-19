@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     minHeight: '100vh',
     backgroundColor: theme.palette.background.default
   },
-  main: { marginTop: '4rem' },
+  main: { margin: '4rem 2rem 0 2rem' },
   appBar: {
     color: theme.palette.common.primary
   },

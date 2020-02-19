@@ -31,7 +31,6 @@ const App = () => {
     <ApolloProvider client={client}>
       <ThemeProvider theme={defaultTheme}>
         <Grid container className={classes.root}>
-          <Header />
           <Grid
             container
             xs={12}

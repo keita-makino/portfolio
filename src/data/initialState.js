@@ -1,19 +1,31 @@
 export default {
-  header: {
+  profile: {
     title: 'Keita Makino',
+    positions: [
+      'PhD student at Institute of Transportation Studies',
+      'University of California, Davis'
+    ],
     links: [
       {
-        title: 'Linkedin',
         link: 'https://www.linkedin.com/in/kemakino/',
+        text: 'Linkedin',
+        icon: 'LinkedIn',
         __typename: 'link'
       },
       {
-        title: 'GitHub',
         link: 'https://github.com/keita-makino/',
+        text: 'GitHub',
+        icon: 'GitHub',
+        __typename: 'link'
+      },
+      {
+        link: 'https://github.com/keita-makino/portfolio/',
+        text: 'This Page',
+        icon: null,
         __typename: 'link'
       }
     ],
-    __typename: 'header'
+    __typename: 'profile'
   },
   academic: {
     cards: [
@@ -23,10 +35,10 @@ export default {
         subtitle: 'Transportation Research Part D - January 2019',
         descriptions: [
           'Wang, G., Makino, K., Harmandayan, A., Wu, X.',
-          '・ unique survey on eco-driving was conducted and five indicators were identified.',
-          '・ Survey data were utilized to analyze the behaviors of PEVs, HEVs, and ICEVs.',
-          '・ Survey reveals that EV drivers possess calmer and more fuel-efficient habits.',
-          '・ Data on self-identification of eco-driver were investigated for eco-driving reason.'
+          '・unique survey on eco-driving was conducted and five indicators were identified.',
+          '・Survey data were utilized to analyze the behaviors of PEVs, HEVs, and ICEVs.',
+          '・Survey reveals that EV drivers possess calmer and more fuel-efficient habits.',
+          '・Data on self-identification of eco-driver were investigated for eco-driving reason.'
         ],
         __typename: 'card'
       }
